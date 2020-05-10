@@ -1,0 +1,37 @@
+<html lang="en">
+<h1 class="admin ">Admin</h1>
+<article class="posts">
+<%= link "Add post", to: Routes.posts_path(@conn, :new) %>
+<section>
+<div class="post">
+<%= for post <- @posts  do %>
+
+
+<div class="title-category-publisher">
+
+<h2 class="index_title"><%= link post.title, to: Routes.posts_path(@conn, :show, post) %> </h2> 
+
+<div class="category_publisher">
+<h2 class="category_1">  <%= post.category %> </h2>
+<h2 class="category_2"> <%= post.publisher %> </h2>
+</div>
+
+
+
+
+<div class="code-toolbar">
+<pre class="language-elixir">
+<code class="elixir language-elixir">
+<%= raw(Earmark.as_html!(post.body)) %>
+</code>
+</pre>
+</div>
+
+<div class="counter"> <span class="counter">Views <%= post.view_counter %> </span> </div>
+
+
+<% end %>
+
+</section>
+</article>
+</html>

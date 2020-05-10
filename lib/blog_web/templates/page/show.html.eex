@@ -1,0 +1,37 @@
+<html lang="en">
+
+<article class="posts">
+
+<section>
+<div class="post">
+
+
+
+<div class="title-category-publisher">
+
+<h2 class="index_title"><%=@post.title%> </h2> 
+
+<div class="category_publisher">
+<h2 class="category_1"> <%= @post.category %> </h2>
+<h2 class="category_2"> <%= @post.publisher %> </h2>
+</div>
+
+
+
+
+<div class="code-toolbar">
+<pre class="language-elixir">
+<code class="elixir language-elixir">
+<%= raw(Earmark.as_html!(@post.body)) %>
+</code>
+</pre>
+</div>
+
+<div class="counter"> <span class="counter">Views <%= @post.view_counter %> </span> </div>
+
+
+
+
+</section>
+</article>
+</html>

@@ -1,0 +1,44 @@
+<html lang="en">
+
+
+<article class="posts">
+
+<section>
+<div class="post">
+<%= for post <- @posts  do %>
+
+
+
+
+<div class="title-category-publisher">
+
+<h2 class="index_title"><%= link post.title, to: Routes.page_path(@conn, :show, post) %> </h2> 
+
+<div class="category_publisher">
+<span class="category_1"> <div class="category-hidden"> <%= post.category %> </div> <%= Utils.trim_text(post.category, 10) %>  </span>
+<span class="category_2">  <%= post.publisher %> </span>
+</div>
+
+
+
+
+<div class="code-toolbar">
+<pre class="language-elixir">
+<code class="elixir language-elixir">
+<%= raw(Earmark.as_html!(post.body)) %>
+</code>
+</pre>
+</div>
+
+<div class="counter"> <span class="counter">Views <%= post.view_counter %> </span> </div>
+
+
+
+<% end %>
+
+
+</section>
+</article>
+
+</html>
+

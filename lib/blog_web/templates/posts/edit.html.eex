@@ -1,0 +1,30 @@
+<h1> Post </h1>
+
+<%= form_for @changeset , Routes.posts_path(@conn, :update, @post.id), fn f ->  %>
+
+<%= label do %>
+    <span>Title</span>
+    <%= text_input f, :title  %>
+  <% end %>
+
+  <%= label do %>
+    <span>Coma separated categories</span>
+    <%= text_input f, :category  %>
+  <% end %>
+
+  <%= label do %>
+    <span>Post body</span>
+    <%= textarea f, :body  %>
+  <% end %>
+
+  <%= label do %>
+    <span> Published by </span>
+    
+    <%= text_input f, :publisher %>
+    
+  <% end %>
+
+  
+  <%= submit "Edit" %> <%= submit "Cancel"%>
+ 
+<% end %>

@@ -1,0 +1,44 @@
+<html lang="en">
+
+<article class="posts">
+
+<section>
+<div class="post">
+
+<div class="edit-delete">
+<div class="edit">
+<%=link "Edit", to: Routes.posts_path(@conn, :edit, @post.id)%>
+</div>
+<div class="delete">
+<%= form_for @conn, Routes.posts_path(@conn, :delete, @post.id), [as: :delete, method: :post], fn f ->  %>
+        <%= submit "Delete #{@post.title}?", data: [confirm: "Are you sure?"] %> 
+</div>
+</div>
+<div class="title-category-publisher">
+
+<h2 class="index_title"><%=@post.title%> </h2> 
+
+<div class="category_publisher">
+<h2 class="category_1">  <%= @post.category %> </h2>
+<h2 class="category_2"> <%= @post.publisher %> </h2>
+</div>
+
+
+
+
+<div class="code-toolbar">
+<pre class="language-elixir">
+<code class="elixir language-elixir">
+<%= raw(Earmark.as_html!(@post.body)) %>
+</code>
+</pre>
+</div>
+
+<div class="counter"> <span class="counter">Views <%= @post.view_counter %> </span> </div>
+
+
+<% end %>
+
+</section>
+</article>
+</html>

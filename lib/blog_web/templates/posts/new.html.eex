@@ -1,0 +1,36 @@
+        <div class="new">
+<h1 class="new_title">New Post</h1>
+
+<%= form_for @changeset, Routes.posts_path(@conn, :create), fn f -> %>
+  <%= label do %>
+    <span>Title</span>
+    <%= text_input f, :title  %>
+  <% end %>
+
+  <%= label do %>
+    <span>Coma separated categories</span>
+    <%= text_input f, :category  %>
+  <% end %>
+
+  <%= label do %>
+    <span>Post body</span>
+    <%= error_tag f, :body %>
+    <%= textarea f, :body  %>
+  <% end %>
+ 
+
+  <%= label do %>
+    <span> Published by </span>
+    
+    <%= text_input f, :publisher %>
+  
+  <% end %>
+   <%= label do %>
+    <span>Iserted at</span>
+    <%= text_input f, :inserted_at, type: "date" %>
+  <% end %>
+  
+  <%= submit "Post" %>
+ 
+<% end %>
+</div>
