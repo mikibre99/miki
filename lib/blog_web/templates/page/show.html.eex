@@ -1,6 +1,7 @@
 <html lang="en">
 
-<% upvoted = Plug.Conn.get_session(@conn, :upvoted) %>
+  <% upvoted = Plug.Conn.get_session(@conn, :upvoted) %>
+  <% upvoted = if is_nil(upvoted), do: [], else: upvoted %>
 <article class="posts">
 
 <section>
