@@ -9,3 +9,7 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
+alias Blog.RepoFunctions
+for i <- 0..150 do
+  RepoFunctions.insert_post(%{title: "title#{i}", category: "category#{i}", body: "some body #{i}", publisher: "Johny"})
+end

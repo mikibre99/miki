@@ -1,5 +1,6 @@
 <html lang="en">
 
+<% upvoted = Plug.Conn.get_session(@conn, :upvoted) %>
 <article class="posts">
 
 <section>
@@ -7,13 +8,13 @@
 
 
 
+
 <div class="title-category-publisher">
 
-<h2 class="index_title"><%=@post.title%> </h2> 
-
+<h2 class="index_title1"> <%= @post.title %> </h2> 
 <div class="category_publisher">
-<h2 class="category_1"> <%= @post.category %> </h2>
-<h2 class="category_2"> <%= @post.publisher %> </h2>
+<span class="category_1"> <div class="category-hidden"> <%= @post.category %> </div> <%= Utils.trim_text(@post.category, 10) %>  </span>
+<span class="category_2">  <%= @post.publisher %> <%= @post.inserted_at%> </span>
 </div>
 
 
@@ -27,11 +28,22 @@
 </pre>
 </div>
 
-<div class="counter"> <span class="counter">Views <%= @post.view_counter %> </span> </div>
+<div class="counter">  
+   <%= if Enum.any?(upvoted, fn x -> x == @post.id end) do %>
+   <span class="upvoted">Upvoted <%= @post.upvotes %></span>
+   <% else %>
+    <%= link "Upvote", to: Routes.page_path(@conn, :upvote, @post) %>
+    <% end %>
+    
+    <span class="counter1">Views <%= @post.view_counter %> </span>
+   </div>
+
 
 
 
 
 </section>
 </article>
+
 </html>
+

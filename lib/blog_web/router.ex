@@ -15,7 +15,7 @@ defmodule BlogWeb.Router do
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
-    plug BasicAuth, use_config: {:blog, :basic_auth} 
+    plug BasicAuth, use_config: {:blog, :basic_auth}
   end
 
   pipeline :api do
@@ -32,6 +32,7 @@ defmodule BlogWeb.Router do
   scope "/admin", BlogWeb do
     pipe_through :admin
     post "/:id/delete", PostsController, :delete
+    get "/upvote/:id", PageController, :upvote
     resources "/", PostsController
   end
 

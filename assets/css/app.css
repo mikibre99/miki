@@ -66,6 +66,7 @@ section{
 }
 .title-category-publisher{
     padding-top: 20px;
+    
 }
 
  .container h2{
@@ -132,14 +133,14 @@ span{
 }
 .post{
     overflow: auto;
-    padding: 0 4vw 4vw 4vw;
+    padding: 0 6vw 6vw 6vw;
    
 }
 .code-toolbar{
     position: relative;
 font-size: 18px;
     background-color: rgb(110, 110, 110);
-    min-width: 700px;
+    min-width: 800px;
     max-width: 800px;
 }
 pre{
@@ -242,19 +243,31 @@ input[type=text] {
 
 
   /* index.html */
+
+.index_title1{
+    font-size: 35px;
+}
+
   .index_title a{
-    color: black;
-    font-size: 38px;
+
+    color: blue;
+    font-size: 40px;
    
+}
+.index_title{
+    padding-top: 40px;
 }
 .index_title  :hover{
     color: red;
+
     text-decoration: underline 3px solid red;
 }
 
 
+
 .category_publisher .category_1{
  text-align: inline-start;
+ font-size: 20px;
 
 
 }
@@ -266,6 +279,8 @@ input[type=text] {
 .category_publisher .category_2{
 text-align: inline-end;
 float: right;
+font-size: 20px;
+
 
 }
 .category-hidden {
@@ -277,8 +292,9 @@ float: right;
 
 }
 .counter {
-    display: block;
-    position: relative
+    display: inline-block;
+    position: relative;
+    
    
 }
 .counter{
@@ -300,9 +316,29 @@ right: 0;
 .edit a{
    color: black;
    font-size: 30px;
-
-
-
- 
   }
 
+.upvoted{
+
+left: 0;
+position: relative;
+font-size: 20px;
+}
+.upvoted{
+    left: 0;
+    position: absolute;
+}
+
+.counter1{
+font-size: 20px;
+right: 0;
+position: absolute;
+}
+.date{
+    
+    font-size: 20px;
+    position: relative;
+}
+section{
+    padding-bottom: 50px;
+}

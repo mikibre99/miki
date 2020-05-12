@@ -30,10 +30,10 @@
 </pre>
 </div>
 
-<div class="counter"> <span class="counter">Views <%= post.view_counter %> </span> </div>
+<div class="counter"> <span class="counter">Views <%= post.view_counter %> </span> 
 
-
-
+ <span class="upvoted">Upvoted <%= post.upvotes %></span>
+</div>
 <% end %>
 
 

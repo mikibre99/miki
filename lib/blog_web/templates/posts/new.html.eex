@@ -25,10 +25,7 @@
     <%= text_input f, :publisher %>
   
   <% end %>
-   <%= label do %>
-    <span>Iserted at</span>
-    <%= text_input f, :inserted_at, type: "date" %>
-  <% end %>
+
   
   <%= submit "Post" %>
  
